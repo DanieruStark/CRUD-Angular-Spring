@@ -14,7 +14,6 @@ import { CoursesService } from './services/courses.service';
 })
 export class CoursesComponent implements OnInit {
   courses$: Observable<Course[]>;
-  displayedColumns = ['name', 'category', 'actions'];
 
   constructor(
     private coursesService: CoursesService,
@@ -32,13 +31,13 @@ export class CoursesComponent implements OnInit {
 
   onError(errorMsg: string) {
     this.dialog.open(ErrorDialogComponent, {
-      data: errorMsg
+      data: errorMsg,
     });
   }
 
   ngOnInit(): void {}
 
-  onAdd(){
-    this.router.navigate(['new'], {relativeTo: this.route});
+  onAdd() {
+    this.router.navigate(['new'], { relativeTo: this.route });
   }
 }
